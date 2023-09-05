@@ -1,10 +1,10 @@
-package cl.awakelab.miprimersprimg;
+package cl.awakelab.miprimerspring;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MiPrimerSprimgApplicationTests {
+class MiPrimerSpringApplicationTests {
 
     @Test
     void contextLoads() {

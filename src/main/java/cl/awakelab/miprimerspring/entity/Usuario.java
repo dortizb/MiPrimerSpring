@@ -1,4 +1,4 @@
-package cl.awakelab.miprimersprimg.entity;
+package cl.awakelab.miprimerspring.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
