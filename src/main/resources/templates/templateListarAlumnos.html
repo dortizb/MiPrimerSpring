@@ -16,25 +16,27 @@
         <thead>
         <tr>
             <th>ID</th>
-            <th>Nombre de usuario</th>
-            <th>Rol</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
+            <th>Nombre de Alumno</th>
+            <th>Primer Apellido</th>
+            <th>Segundo Apellido</th>
+            <th>Curso</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="usuario: ${atributoListaUsuarios}">
-            <td th:text="${usuario.id}" class="col-1">></td>
-            <td th:text="${usuario.nombre}" class="col-2"></td>
-            <td th:text="${usuario.rol}" class="col-1"></td>
-            <td class="col-1"><form th:action="@{/usuario/editar/{id}(id=${usuario.id})}"
+        <tr th:each="alumno: ${atributoListaAlumnos}">
+            <td th:text="${alumno.id}" class="col-1">></td>
+            <td th:text="${alumno.nombres}" class="col-3"></td>
+            <td th:text="${alumno.apellido1}" class="col-2"></td>
+            <td th:text="${alumno.apellido2}" class="col-2"></td>
+            <td th:text="${alumno.cursoAsignado.getNombreCurso()}" class="col-2"></td>
+            <!--td class="col-1"><form th:action="@{/usuario/editar/{id}(id=${usuario.id})}"
                                     method="get">
                 <button class="btn btn-warning" type="submit">Editar</button>
             </form></td>
             <td class="col-1"><form th:action="@{/usuario/eliminar/{id}(id=${usuario.id})}"
                                     method="post" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este usuario?')">
                 <button class="btn btn-danger" type="submit">Eliminar</button>
-            </form></td>
+            </form></td-->
         </tr>
         </tbody>
 
