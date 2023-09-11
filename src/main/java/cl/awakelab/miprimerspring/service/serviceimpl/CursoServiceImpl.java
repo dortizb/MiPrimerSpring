@@ -14,9 +14,7 @@ public class CursoServiceImpl implements ICursoService {
     ICursoRepository objCursoRepo;
     @Override
     public Curso crearCurso(Curso cursoACrear) {
-        Curso curso = new Curso();
-        curso = objCursoRepo.save(cursoACrear);
-        return curso;
+        return objCursoRepo.save(cursoACrear);
     }
 
     @Override

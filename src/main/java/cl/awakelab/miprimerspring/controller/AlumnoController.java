@@ -7,10 +7,7 @@ import cl.awakelab.miprimerspring.service.ICursoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -37,8 +34,15 @@ public class AlumnoController {
     }
 
     @PostMapping("/crear")
-    public String crearUsuario(@ModelAttribute Alumno alumno){
+    public String crearAlumno(@ModelAttribute Alumno alumno){
         objAlumnoService.crearAlumno(alumno);
+        return "redirect:/alumno/listar";
+    }
+
+    @PostMapping("/eliminar/{id}")
+    public String eliminarAlumno(@PathVariable int id){
+
+        objAlumnoService.eliminarAlumno(id);
         return "redirect:/alumno/listar";
     }
 }
