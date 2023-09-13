@@ -20,8 +20,8 @@ public class UsuarioServiceImpl implements IUsuarioService {
     }
 
     @Override
-    public Usuario actualizarUsuario(int id, Usuario usuarioActualizar) {
-        Usuario usuarioEncontrado = objUsuarioRepo.findById(id).orElse(null);
+    public Usuario actualizarUsuario(Usuario usuarioActualizar) {
+        Usuario usuarioEncontrado = objUsuarioRepo.findById(usuarioActualizar.getId()).orElse(null);
         usuarioEncontrado.setNombre(usuarioActualizar.getNombre());
         usuarioEncontrado.setRol(usuarioActualizar.getRol());
         usuarioEncontrado.setPassword(usuarioActualizar.getPassword());

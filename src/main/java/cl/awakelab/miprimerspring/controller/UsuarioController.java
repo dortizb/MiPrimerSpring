@@ -41,11 +41,22 @@ public class UsuarioController {
         return "redirect:/usuario/listar";
     }
 
-    @PostMapping("/eliminar/{id}")
-    public String eliminarUsuario(@PathVariable int id){
+    @GetMapping("/editar/{id}")
+    public String formEditarUsuario(Model model, @PathVariable int id){
+        Usuario usuario = objUsuarioService.devolverUsuarioId(id);
+        model.addAttribute("usuario",usuario);
+        return "templateEditarUsuario";
+    }
 
-        objUsuarioService.eliminarUsuario(id);
+    @PostMapping("/editar")
+    public String editarUsuario(@ModelAttribute Usuario usuario){
+        objUsuarioService.actualizarUsuario(usuario);
         return "redirect:/usuario/listar";
     }
 
+    @PostMapping("/eliminar/{id}")
+    public String eliminarUsuario(@PathVariable int id){
+        objUsuarioService.eliminarUsuario(id);
+        return "redirect:/usuario/listar";
+    }
 }

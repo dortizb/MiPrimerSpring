@@ -23,8 +23,8 @@ public class UsuarioRestController {
     }
 
     @PutMapping("/{id}")
-    public Usuario actualizarUsuario(@PathVariable int id,@RequestBody Usuario usuario){
-        return objUsuarioService.actualizarUsuario(id, usuario);
+    public Usuario actualizarUsuario(@RequestBody Usuario usuario){
+        return objUsuarioService.actualizarUsuario(usuario);
     }
 
     @GetMapping("/{id}")
