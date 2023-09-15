@@ -21,8 +21,8 @@ public class AlumnoRestController {
     public List<Alumno> listarAlumno() { return objAlumnoService.listarAlumnos();}
 
     @PutMapping ("/{id}")
-    public Alumno actualizarAlumno(@PathVariable int id,@RequestBody Alumno alumno){
-        return objAlumnoService.actualizarAlumno(id, alumno);
+    public Alumno actualizarAlumno(@RequestBody Alumno alumno){
+        return objAlumnoService.actualizarAlumno(alumno);
     }
     @GetMapping("/{id}")
     public Alumno devolverAlumnoId(@PathVariable int id) {return objAlumnoService.devolverAlumno(id);}

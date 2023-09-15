@@ -39,9 +39,21 @@ public class AlumnoController {
         return "redirect:/alumno/listar";
     }
 
+    @GetMapping("/editar/{id}")
+    public String formEditarAlumno(Model model, @PathVariable int id){
+        Alumno alumno = objAlumnoService.devolverAlumno(id);
+        model.addAttribute("alumno",alumno);
+        return "templateEditarAlumno";
+    }
+
+    @PostMapping("/editar")
+    public String editarAlumno(@ModelAttribute Alumno alumno){
+        objAlumnoService.actualizarAlumno(alumno);
+        return "redirect:/alumno/listar";
+    }
+
     @PostMapping("/eliminar/{id}")
     public String eliminarAlumno(@PathVariable int id){
-
         objAlumnoService.eliminarAlumno(id);
         return "redirect:/alumno/listar";
     }
