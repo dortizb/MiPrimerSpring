@@ -18,8 +18,8 @@ public class ProfesorRestController {
         return objProfesorService.crearProfesor((profesor));
     }
     @PutMapping("/{id}")
-    public Profesor actualizarProfesor(@PathVariable int id,@RequestBody Profesor profesor){
-        return objProfesorService.actualizarProfesor(id, profesor);
+    public Profesor actualizarProfesor(@RequestBody Profesor profesor){
+        return objProfesorService.actualizarProfesor(profesor);
     }
     @GetMapping
     public List<Profesor> listarProfesores(){return objProfesorService.listarProfesores();}

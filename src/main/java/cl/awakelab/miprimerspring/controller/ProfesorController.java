@@ -1,6 +1,7 @@
 package cl.awakelab.miprimerspring.controller;
 
 import cl.awakelab.miprimerspring.entity.Profesor;
+import cl.awakelab.miprimerspring.entity.Usuario;
 import cl.awakelab.miprimerspring.service.IProfesorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,6 +31,19 @@ public class ProfesorController {
     @PostMapping("/crear")
     public String crearProfesor(@ModelAttribute Profesor profesor){
         objProfesorService.crearProfesor(profesor);
+        return "redirect:/profesor/listar";
+    }
+
+    @GetMapping("/editar/{id}")
+    public String formEditarUsuario(Model model, @PathVariable int id){
+        Profesor profesor = objProfesorService.devolverProfesorId(id);
+        model.addAttribute("profesor",profesor);
+        return "templateEditarProfesor";
+    }
+
+    @PostMapping("/editar")
+    public String editarUsuario(@ModelAttribute Profesor profesor){
+        objProfesorService.actualizarProfesor(profesor);
         return "redirect:/profesor/listar";
     }
 

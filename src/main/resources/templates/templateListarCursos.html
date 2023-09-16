@@ -27,11 +27,11 @@
       <td th:text="${curso.id}" class="col-1"></td>
       <td th:text="${curso.nombreCurso}" class="col-1"></td>
       <!--td th:text="${curso.listaProfesores}" class="col-2"></td>
-      <td th:text="${curso.listaAlumnos}" class="col-2"></td>
-      <td class="col-1"><form th:action="@{/usuario/editar/{id}(id=${usuario.id})}"
+      <td th:text="${curso.listaAlumnos}" class="col-2"></td-->
+      <td class="col-1"><form th:action="@{/curso/editar/{id}(id=${curso.id})}"
                               method="get">
         <button class="btn btn-warning" type="submit">Editar</button>
-      </form></td-->
+      </form></td>
       <td class="col-1"><form th:action="@{/curso/eliminar/{id}(id=${curso.id})}"
                               method="post" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este usuario?')">
         <button class="btn btn-danger" type="submit">Eliminar</button>

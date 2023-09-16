@@ -18,8 +18,8 @@ public class CursoServiceImpl implements ICursoService {
     }
 
     @Override
-    public Curso actualizarCurso(int id, Curso cursoActualizar) {
-        Curso cursoEncontrado = objCursoRepo.findById(id).orElse(null);
+    public Curso actualizarCurso(Curso cursoActualizar) {
+        Curso cursoEncontrado = objCursoRepo.findById(cursoActualizar.getId()).orElse(null);
         cursoEncontrado.setNombreCurso(cursoActualizar.getNombreCurso());
         cursoEncontrado.setListaAlumnos(cursoActualizar.getListaAlumnos());
         cursoEncontrado.setListaProfesores(cursoActualizar.getListaProfesores());

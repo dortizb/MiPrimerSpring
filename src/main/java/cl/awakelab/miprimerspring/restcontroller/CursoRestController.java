@@ -19,8 +19,8 @@ public class CursoRestController {
     }
 
     @PutMapping("/{id}")
-    public Curso actualizarCurso(@PathVariable int id,@RequestBody Curso curso){
-        return objCursoService.actualizarCurso(id, curso);
+    public Curso actualizarCurso(@RequestBody Curso curso){
+        return objCursoService.actualizarCurso(curso);
     }
     @GetMapping
     public List<Curso> listarCursos() {return objCursoService.listarCursos();}

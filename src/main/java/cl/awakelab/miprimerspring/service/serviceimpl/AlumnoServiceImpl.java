@@ -35,7 +35,7 @@ public class AlumnoServiceImpl implements IAlumnoService {
 
     @Override
     public Alumno devolverAlumno(int id) {
-        return null;
+        return objAlumnoRepo.findById(id).orElse(null);
     }
 
     @Override

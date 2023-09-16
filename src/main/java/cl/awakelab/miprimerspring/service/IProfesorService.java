@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IProfesorService {
     public Profesor crearProfesor(Profesor profesorACrear);
-    public Profesor actualizarProfesor(int id, Profesor profesor);
+    public Profesor actualizarProfesor(Profesor profesor);
     public List<Profesor> listarProfesores();
     public Profesor devolverProfesorId(int id);
     public void eliminarProfesor(int id);

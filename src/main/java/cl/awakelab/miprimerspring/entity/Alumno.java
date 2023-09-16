@@ -27,7 +27,7 @@ public class Alumno {
     private String apellido2;
 
 
-    @ManyToOne(optional = false,cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @ManyToOne(optional = false,cascade =  {CascadeType.PERSIST, CascadeType.MERGE},fetch = FetchType.EAGER)
     @JoinColumn(name = "FK_Curso",nullable = false)
     @JsonIgnore
     private Curso cursoAsignado;
